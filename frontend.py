@@ -1,5 +1,11 @@
 import tkinter as tk
 import os 
+from datetime import datetime
+
+now = datetime.now()
+
+current_time = now.strftime(" %I:%M ")
+# print("Current Time =", current_time)
   
 
 # Global variables 
@@ -26,23 +32,15 @@ dic_encrypt = {'A': 'A12+0', 'B': '1*3a0', 'C': '#140', 'D': '1%5$0', 'E': 'A160
 
 
 
+bg = "#202020"
 
-# Top level window
 frame = tk.Tk()
 frame.title("Text Encryption")
-frame.geometry('800x600')
-# Function for getting Input
-# from textbox and printing it 
-# at label widget
-  
-    
-# def printInput():
-#     inp = inputtxt.get(1.0, "end-1c") 
-#     lbl.config(text = "Provided Input: "+inp)
+frame.geometry('500x700')
+frame.config(bg=bg)
+
 
 def Input_Nor():
-    # inp =  
-
     Normal_txt = inputtxt.get(1.0, "end-1c")
     gen =""
 
@@ -56,7 +54,10 @@ def Input_Nor():
             if(x == y): 
                 gen = gen + dic_encrypt[y]
 
-    lbl.config(text = "Encrypted text is:\n "+ gen)
+    # lbl.config(text = "Encrypted text is:\n "+ gen)
+    # setTextInput(gen)
+    out_txt.delete("1.0", "end")
+    out_txt.insert("1.0", chars = gen)
 
 
 
@@ -80,35 +81,54 @@ def Input_Dec():
         else: 
          text = text + x 
 
+    out_txt.delete("1.0", "end")
+    out_txt.insert("1.0", chars = gen)
+    # lbl.config(text = "Decrypted text is:\n "+ gen)
+    # setTextInput(gen)
 
-    lbl.config(text = "Decrypted text is:\n "+ gen)
+
+def Reset(): 
+    inputtxt.delete("1.0", "end")
+    out_txt.delete("1.0", "end")
 
 
 
-
+Font_tuple = ("Comic Sans MS", 15, "bold")
 # TextBox Creation
-inputtxt = tk.Text(frame,height = 15,width = 100)
+inputtxt = tk.Text(frame,height = 8, width=38, bg="#282828", fg = "white")
+out_txt = tk.Text(frame,height = 8, width=38,bg= "#282828", fg = "white")
+
   
-inputtxt.pack()
+inputtxt.place(x = 18, y = 50)
+inputtxt.config(font = Font_tuple)
+out_txt.place(x = 18, y = 425)
+out_txt.config(font = Font_tuple)
+
+
   
+bt_color="white"
+bt_bg="#003322"
+
+# Button 
+EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15,fg=bt_color,bg=bt_bg)
+EncyptButton.place(x=25, y=325)
 
 
-# Button Creation
-EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15)
-EncyptButton.place(x=550, y=300)
-# EncyptButton.pack()
+DecryptButton = tk.Button(frame,text = "Decrypt",command = Input_Dec,height= 2, width= 15,fg=bt_color,bg=bt_bg)
+DecryptButton.place(x=193, y=325)
 
-
-DecryptButton = tk.Button(frame,text = "Decypt",command = Input_Dec,height= 2, width= 15)
-DecryptButton.place(x=1000, y=300)
-# DecryptButton.pack()
+ResetButton = tk.Button(frame,text = "Reset",command = Reset,height= 2, width= 15,fg=bt_color,bg=bt_bg)
+ResetButton.place(x=350, y=325)
   
-
 
 
 # Label Creation
-lbl = tk.Label(frame, text = "")
+lbl = tk.Label(frame, text = "Text Encryption and Decryption",font=Font_tuple, bg= bg,fg = "#1aff1a")
 lbl.pack()
+
+time = tk.Label(frame, text = current_time,font = Font_tuple,fg="#1aff1a",bg=bg)
+time.place(y = 666, x = 390)
+# time.config()
 
 os.system("cls")
 frame.mainloop()
