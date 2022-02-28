@@ -99,15 +99,14 @@ out_txt.place(x = 18, y = 425)
 out_txt.config(font = Font_tuple)
 
 # Button 
-EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15,fg=bt_color,bg=bt_bg)
+EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15,fg=bt_color,bg="green")
 EncyptButton.place(x=25, y=325)
 
-DecryptButton = tk.Button(frame,text = "Decrypt",command = Input_Dec,height= 2, width= 15,fg=bt_color,bg=bt_bg)
+DecryptButton = tk.Button(frame,text = "Decrypt",command = Input_Dec,height= 2, width= 15,fg=bt_color,bg="#3366ff")
 DecryptButton.place(x=193, y=325)
 
-ResetButton = tk.Button(frame,text = "Reset",command = Reset,height= 2, width= 15,fg=bt_color,bg=bt_bg)
-ResetButton.place(x=350, y=325)
-  
+ResetButton = tk.Button(frame,text = "Reset",command = Reset,height= 2, width= 15,fg=bt_color,bg="red")
+ResetButton.place(x=350, y=325)  
 
 # Label Creation
 lbl = tk.Label(frame, text = "Text Encryption and Decryption",font=Font_tuple, bg= bg,fg = "#1aff1a")
