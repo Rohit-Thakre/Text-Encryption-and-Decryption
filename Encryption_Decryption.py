@@ -2,8 +2,8 @@ import tkinter as tk
 import os 
 from datetime import datetime
 
-now = datetime.now()
-current_time = now.strftime(" %I:%M ")
+# now = datetime.now()
+# current_time = now.strftime(" %I:%M ")
   
 
 # Global variables 
@@ -32,14 +32,17 @@ dic_encrypt = {'A': 'A12+0', 'B': '1*3a0', 'C': '#140', 'D': '1%5$0', 'E': 'A160
 frame = tk.Tk()
 frame.title("Text Encryption")
 frame.geometry('500x700')
-bg = "#202020"
+# bg = "#202020"
+bg = "black"
 frame.config(bg=bg)
 
 
+
 def Input_Nor():
+
     Normal_txt = inputtxt.get(1.0, "end-1c")
     gen =""
-
+    
    # func of text encryption
     for x in Normal_txt: 
       # print(x)
@@ -90,8 +93,8 @@ bt_color="white"
 bt_bg="#003322"
 
 # TextBox Creation
-inputtxt = tk.Text(frame,height = 8, width=38, bg="#282828", fg = "white")
-out_txt = tk.Text(frame,height = 8, width=38,bg= "#282828", fg = "white")
+inputtxt = tk.Text(frame,height = 8, width=38, bg="#051405", fg = "white",insertbackground="white")
+out_txt = tk.Text(frame,height = 8, width=38,bg= "#051405", fg = "white",insertbackground="white")
 # pack  
 inputtxt.place(x = 18, y = 50)
 inputtxt.config(font = Font_tuple)
@@ -99,21 +102,22 @@ out_txt.place(x = 18, y = 425)
 out_txt.config(font = Font_tuple)
 
 # Button 
-EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15,fg=bt_color,bg="green")
+EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15,fg=bt_color,bg="#1aff1a")
 EncyptButton.place(x=25, y=325)
 
 DecryptButton = tk.Button(frame,text = "Decrypt",command = Input_Dec,height= 2, width= 15,fg=bt_color,bg="#3366ff")
 DecryptButton.place(x=193, y=325)
 
 ResetButton = tk.Button(frame,text = "Reset",command = Reset,height= 2, width= 15,fg=bt_color,bg="red")
-ResetButton.place(x=350, y=325)  
+ResetButton.place(x=350, y=325)
+  
 
 # Label Creation
 lbl = tk.Label(frame, text = "Text Encryption and Decryption",font=Font_tuple, bg= bg,fg = "#1aff1a")
 lbl.pack()
 
-time = tk.Label(frame, text = current_time,font = Font_tuple,fg="#1aff1a",bg=bg)
-time.place(y = 666, x = 390)
+# time = tk.Label(frame, text = current_time,font = Font_tuple,fg="#1aff1a",bg=bg)
+# time.place(y = 666, x = 390)
 
 os.system("cls")
 frame.mainloop()
