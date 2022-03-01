@@ -32,8 +32,7 @@ dic_encrypt = {'A': 'A12+0', 'B': '1*3a0', 'C': '#140', 'D': '1%5$0', 'E': 'A160
 frame = tk.Tk()
 frame.title("Text Encryption")
 frame.geometry('500x700')
-# bg = "#202020"
-bg = "black"
+bg = "#202020"
 frame.config(bg=bg)
 
 
@@ -87,14 +86,14 @@ def Reset():
     out_txt.delete("1.0", "end")
 
 
-
+btn_font = ('Helvetica 10 bold italic')
 Font_tuple = ("Comic Sans MS", 15, "bold")
 bt_color="white"
 bt_bg="#003322"
 
 # TextBox Creation
-inputtxt = tk.Text(frame,height = 8, width=38, bg="#051405", fg = "white",insertbackground="white")
-out_txt = tk.Text(frame,height = 8, width=38,bg= "#051405", fg = "white",insertbackground="white")
+inputtxt = tk.Text(frame,height = 8, width=38, bg="#262626", fg = "white",insertbackground="white")
+out_txt = tk.Text(frame,height = 8, width=38,bg= "#262626", fg = "white",insertbackground="white")
 # pack  
 inputtxt.place(x = 18, y = 50)
 inputtxt.config(font = Font_tuple)
@@ -102,13 +101,13 @@ out_txt.place(x = 18, y = 425)
 out_txt.config(font = Font_tuple)
 
 # Button 
-EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15,fg=bt_color,bg="#1aff1a")
+EncyptButton = tk.Button(frame,text = "Encrypt",command = Input_Nor, height= 2, width= 15,fg=bt_color,bg="#1aff1a", font= btn_font)
 EncyptButton.place(x=25, y=325)
 
-DecryptButton = tk.Button(frame,text = "Decrypt",command = Input_Dec,height= 2, width= 15,fg=bt_color,bg="#3366ff")
+DecryptButton = tk.Button(frame,text = "Decrypt",command = Input_Dec,height= 2, width= 15,fg=bt_color,bg="#3366ff", font=btn_font)
 DecryptButton.place(x=193, y=325)
 
-ResetButton = tk.Button(frame,text = "Reset",command = Reset,height= 2, width= 15,fg=bt_color,bg="red")
+ResetButton = tk.Button(frame,text = "Reset",command = Reset,height= 2, width= 15,fg=bt_color,bg="red", font=btn_font)
 ResetButton.place(x=350, y=325)
   
 
