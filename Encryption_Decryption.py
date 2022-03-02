@@ -115,8 +115,7 @@ ResetButton.place(x=350, y=325)
 lbl = tk.Label(frame, text = "Text Encryption and Decryption",font=Font_tuple, bg= bg,fg = "#1aff1a")
 lbl.pack()
 
-# time = tk.Label(frame, text = current_time,font = Font_tuple,fg="#1aff1a",bg=bg)
-# time.place(y = 666, x = 390)
+
 
 os.system("cls")
 frame.mainloop()
