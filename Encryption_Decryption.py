@@ -31,6 +31,8 @@ dic_encrypt = {'A': 'A12+0', 'B': '1*3a0', 'C': '#140', 'D': '1%5$0', 'E': 'A160
 frame = tk.Tk()
 frame.title("Text Encryption")
 frame.geometry('500x730')
+frame.minsize(500, 730)
+frame.maxsize(500,730)
 bg = "#202020"
 frame.config(bg=bg)
 
@@ -42,7 +44,7 @@ def Input_Nor():
     gen =""
 
     current_time = datetime.datetime.now()
-    file = open( "histry.txt",  "a")
+    file = open( "History.txt",  "a")
     file.writelines("\n" + Normal_txt + "\t \t " + str(current_time))
     
    # func of text encryption
