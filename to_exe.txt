@@ -1,0 +1,7 @@
+#for installation command (in cmd)
+$pip install auto-py-to-exe
+
+
+#run  auto-py-to-exe:
+$auto-py-exe
+
